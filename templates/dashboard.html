@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-header bg-blue-500 text-white">
+                <h5 class="mb-0">User Profile</h5>
+            </div>
+            <div class="card-body">
+                <p><strong>Username:</strong> {{ session['username'] }}</p>
+                <p><strong>Theme:</strong> <span id="currentTheme">Light</span></p>
+                <button class="btn btn-sm btn-outline-primary mt-2" id="changeThemeBtn">
+                    Change Theme
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-8 mb-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-header bg-blue-500 text-white">
+                <h5 class="mb-0">Recent Activity</h5>
+            </div>
+            <div class="card-body">
+                <div class="list-group">
+                    <div class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <span>Last login</span>
+                            <span>Just now</span>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <span>Previous consultation</span>
+                            <span>2 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12">
+        <div class="card shadow-sm">
+            <div class="card-header bg-blue-500 text-white">
+                <h5 class="mb-0">Quick Actions</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="/" class="btn btn-outline-primary">
+                        <i class="fas fa-comment-medical me-2"></i>New Consultation
+                    </a>
+                    <a href="/doctors" class="btn btn-outline-primary">
+                        <i class="fas fa-user-md me-2"></i>Find Doctors
+                    </a>
+                    <a href="#" class="btn btn-outline-primary">
+                        <i class="fas fa-prescription me-2"></i>My Prescriptions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
