@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card shadow-sm">
+            <div class="card-header bg-blue-500 text-white">
+                <h5 class="mb-0">AI Healthcare Assistant</h5>
+            </div>
+            <div class="card-body">
+                <div id="chat-container" class="mb-3" style="height: 400px; overflow-y: auto;">
+                    <div class="chat-message bot-message mb-2">
+                        <div class="bg-blue-100 dark:bg-gray-700 rounded-lg p-3 inline-block">
+                            Hello! I'm your healthcare assistant. How can I help you today?
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-group mb-3">
+                    <input type="text" id="chat-input" class="form-control" placeholder="Type your health concern...">
+                    <button id="voice-btn" class="btn btn-outline-secondary" type="button">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <button id="send-btn" class="btn btn-primary" type="button">Send</button>
+                </div>
+                
+                <div class="quick-replies mb-3">
+                    <button class="btn btn-sm btn-outline-primary me-2 quick-reply">First Aid</button>
+                    <button class="btn btn-sm btn-outline-primary me-2 quick-reply">Book Doctor</button>
+                    <button class="btn btn-sm btn-outline-primary me-2 quick-reply">Upload Image</button>
+                </div>
+                
+                <div id="image-upload-section" class="d-none">
+                    <input type="file" id="injury-image" accept="image/*" class="form-control mb-2">
+                    <button id="upload-btn" class="btn btn-info">Analyze Image</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
